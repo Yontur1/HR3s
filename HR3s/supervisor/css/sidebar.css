@@ -1,0 +1,77 @@
+/* CSS/sidebar.css */
+
+/* --- SIDEBAR THEME VARIABLES --- */
+:root {
+    /* Light Mode (Default) */
+    --sb-bg: #ffffff;
+    --sb-border: rgba(0, 0, 0, 0.08);
+    --sb-text: #555555;
+    --sb-text-hover: #111111;
+    --sb-logo-text: #181818;
+}
+
+.dark-mode {
+    /* Your Original Dark Mode Aesthetic */
+    --sb-bg: #181818; 
+    --sb-border: rgba(255, 255, 255, 0.05);
+    --sb-text: #aaaaaa;
+    --sb-text-hover: #ffffff;
+    --sb-logo-text: #ffffff;
+}
+
+.sidebar {
+    width: 260px;
+    background: var(--sb-bg); /* Now Dynamic */
+    border-right: 1px solid var(--sb-border); /* Now Dynamic */
+    position: fixed;
+    height: 100vh;
+    padding: 2rem 1.5rem;
+    z-index: 100;
+    transition: background 0.3s ease, border 0.3s ease;
+}
+
+.logo {
+    font-size: 1.5rem;
+    font-weight: 700;
+    margin-bottom: 3rem;
+    display: flex;
+    align-items: center;
+    gap: 0.75rem;
+    color: var(--sb-logo-text); /* Now Dynamic */
+}
+
+.logo-box {
+    background: #2CA078; /* Brand Green Stays */
+    width: 38px; height: 38px;
+    border-radius: 8px;
+    display: flex; align-items: center; justify-content: center;
+    color: white; /* 'H' is always white */
+}
+
+.sidebar ul { list-style: none; }
+
+.sidebar li {
+    padding: 0.9rem 1rem;
+    border-radius: 10px;
+    margin-bottom: 0.5rem;
+    cursor: pointer;
+    transition: 0.3s;
+    color: var(--sb-text); /* Now Dynamic */
+    font-size: 0.9rem;
+}
+
+.sidebar li.active { 
+    background: rgba(44, 160, 120, 0.15); 
+    color: #2CA078; 
+    font-weight: 600; 
+}
+
+.sidebar li:hover:not(.active) { 
+    color: var(--sb-text-hover); /* Now Dynamic */
+    background: rgba(0, 0, 0, 0.04); 
+}
+
+/* Specific hover for dark mode to keep your original feel */
+.dark-mode .sidebar li:hover:not(.active) {
+    background: rgba(255, 255, 255, 0.05);
+}
